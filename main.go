@@ -1,6 +1,7 @@
 package main
 
 import (
+  "github.com/mattn/go-tty"
   "crypto/sha256"
   "fmt"
   "io"
@@ -17,5 +18,22 @@ func main () {
     fmt.Fprintf(os.Stderr, "Error: %s\n", err.Error())
     os.Exit(1)
   }
-  fmt.Fprintf(os.Stderr, "%x\n", h.Sum(nil))
+
+  // Open tty
+  tty, err := tty.Open()
+  defer tty.Close()
+
+  // Output of hash
+  var hOut io.Writer
+  // If not error
+  if err == nil {
+    // Set hash output as tty
+    hOut = tty.Output()
+  } else {
+    // Set hash output as stderr
+    hOut = os.Stderr
+  }
+
+  // Print hash value
+  fmt.Fprintf(hOut, "%x\n", h.Sum(nil))
 }
