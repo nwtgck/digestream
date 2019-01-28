@@ -3,19 +3,19 @@ Streaming message digest calculator: Insert digest calculation inside pipe
 
 ## Usage
 
-Here is an example to use `digestream`.
+Here is an example to use `digestream`. The command below allows you to download `ubuntu.iso` and calculate message digest at the same time.
 
 ```bash
-seq 1000 | digestream | gzip > seq1000.gz
+curl http://releases.ubuntu.com/18.04/ubuntu-18.04.1-desktop-amd64.iso | digestream > ubuntu.iso
 ```
 
-Then you will have a digest as follows in tty.
+Then you will have a SHA-256 digest as follows in tty.
 ```
-67d4ff71d43921d5739f387da09746f405e425b07d727e4c69d029461d1f051f
+5748706937539418ee5707bd538c4f5eabae485d17aa49fb13ce2c9b70532433
 ```
 
-Note that the message digest, `67d4ff71d...51f` is output to tty not to stdout, so the digest must not be passed to the `gzip`.  
-The command above is the same as `seq 1000 | gzip > seq1000.gz` except for digest calculation.
+Note that the message digest, `5748706937...433` is output to tty not to stdout.  
+The command above is the same as `curl ... > ubuntu.iso` except for digest calculation.
 
 ## Motivation
 
@@ -58,8 +58,8 @@ You can get all algorithms by `digestream -h`.
 Dige(st + St)ream
 
 Usage:
-  ./digestream [flags]
-  ./digestream [command]
+  digestream [flags]
+  digestream [command]
 
 Available Commands:
   help        Help about any command
@@ -69,7 +69,7 @@ Available Commands:
   sha512      SHA-512
 
 Flags:
-  -h, --help   help for ./digestream
+  -h, --help   help for digestream
 
-Use "./digestream [command] --help" for more information about a command.
+Use "digestream [command] --help" for more information about a command.
 ```
