@@ -1,5 +1,11 @@
 # digestream
+[![CircleCI](https://circleci.com/gh/nwtgck/digestream.svg?style=shield)](https://circleci.com/gh/nwtgck/digestream)
+
 Streaming message digest calculator: Insert digest calculation inside pipe
+
+## Installation
+
+Get executable binaries from [GitHub Releases](https://github.com/nwtgck/digestream/releases)
 
 ## Usage
 
