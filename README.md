@@ -25,7 +25,7 @@ The command above is the same as `curl ... > ubuntu.iso` except for digest calcu
 
 ## Motivation
 
-One of the motivations of `digestream` is for [Piping server](https://github.com/nwtgck/piping-server), which is a server to allow users to transfer data via HTTP.  
+One of the motivations of `digestream` is for [Piping Server](https://github.com/nwtgck/piping-server), which is a server to allow users to transfer data via HTTP.  
 You can get more information in <https://github.com/nwtgck/piping-server>.
 
 By using `digestream`, users get more confident to send data correctly.
